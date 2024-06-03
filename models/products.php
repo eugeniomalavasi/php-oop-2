@@ -15,4 +15,6 @@ class Products {
         $this->image_path = $_image_path;
         $this->quantity = $_quantity;
     }
+
+
 }
