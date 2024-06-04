@@ -22,6 +22,10 @@ class Food extends Products {
      */ 
     public function setfood_status($_food_status): void
     {
+        if ($_food_status === "") {
+            throw new Exception("Non può essere vuoto");
+            
+        }
         $this->food_status = $_food_status;
     }
 }

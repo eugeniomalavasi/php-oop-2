@@ -9,7 +9,12 @@ class Products {
 
     public function __construct(string $_name, string $_price, Type $_type) {
         $this->name = $_name;
-        $this->price = $_price;
+        if ($_price < 0) {
+            throw new Exception("prezzo non può essere negativo");
+        } else {
+
+            $this->price = $_price;
+        }
         $this->type = $_type;
     }
 
@@ -18,9 +23,9 @@ class Products {
      */ 
     public function getImage_path(): string
     {
-        if(isset($this->image_path) && !empty($this->image_path)) {
+        // if(isset($this->image_path) && !empty($this->image_path)) {
             return $this->image_path;
-        }
+        // }
         
     }
 
@@ -32,9 +37,11 @@ class Products {
     {
         if($_image_path === "") {
             $this->image_path = "https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg";
+        } else {
+
+            $this->image_path = $_image_path;
         }
 
-        $this->image_path = $_image_path;
     }
 }
 
