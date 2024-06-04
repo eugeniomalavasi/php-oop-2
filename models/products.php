@@ -18,7 +18,10 @@ class Products {
      */ 
     public function getImage_path(): string
     {
-        return $this->image_path;
+        if(isset($this->image_path) && !empty($this->image_path)) {
+            return $this->image_path;
+        }
+        
     }
 
     /**
@@ -27,6 +30,10 @@ class Products {
      */ 
     public function setImage_path($_image_path): void
     {
+        if($_image_path === "") {
+            $this->image_path = "https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg";
+        }
+
         $this->image_path = $_image_path;
     }
 }

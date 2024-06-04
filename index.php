@@ -26,6 +26,12 @@ $dog_food->setImage_path("https://m.media-amazon.com/images/I/81C3Z9OACqL._AC_UF
 $dog_food->setfood_status("crocchette");
 var_dump($dog_food);
 
-$cat_toy = new Toy("batuffolo di lana", 18.99, $cat_type);
-$cat_toy->setImage_path("https://media.dm-static.com/images/f_auto,q_auto,c_fit,h_1200,w_1200/v1716447362/products/pim/3065890122222_ShebaCreazioniSalsaTac_PolloVerdure85gr_8367_IT/sheba-cibo-umido-per-gatti-in-salsa-con-tacchino-pollo-e-verdure-creazioni-speciali");
+$cat_toy = new Toy("bacchetta", 18.99, $cat_type);
+$cat_toy->setImage_path("");
 var_dump($cat_toy);
+
+try {
+    $cat_toy->setImage_path("");
+} catch (Exception $e) {
+    echo "immagine non trovata" . $e->getMessage();
+}
