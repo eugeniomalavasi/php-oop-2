@@ -23,7 +23,7 @@ $cat_type->setIcon("fa-solid fa-cat");
 
 $dog_food = new Food("cibo per cane", 5.99, $dog_type, 850);
 $dog_food->setImage_path("https://m.media-amazon.com/images/I/81C3Z9OACqL._AC_UF1000,1000_QL80_.jpg");
-$dog_food->setfood_status("");
+$dog_food->setfood_status("crocchette");
 var_dump($dog_food);
 
 $cat_toy = new Toy("bacchetta", 18.99, $cat_type);
